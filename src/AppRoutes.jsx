@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar'; // Add your Navbar here
-import Footer from './components/Footer'; // Add Footer if you have it
-import HomePage from './pages/HomePage'; // Make sure this is correct
+import Navbar from './components/Navbar'; 
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage'; 
 import LoginPage from './pages/LoginPage';
 import RegisterStudentPage from './pages/RegisterStudentPage';
 import ContactPage from './pages/ContactPage';
