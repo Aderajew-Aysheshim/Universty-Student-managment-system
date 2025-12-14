@@ -5,12 +5,12 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Close mobile menu when navigating
+  
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
-  // Navigation items configuration
+
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
@@ -20,21 +20,21 @@ function Navbar() {
   ];
 
   return (
-    <nav className="bg-blue-700 text-white shadow-md" aria-label="Main navigation">
-      <div className="container mx-auto flex flex-wrap items-center justify-between p-4">
-        {/* Logo */}
+    <nav className="text-white bg-blue-700 shadow-md" aria-label="Main navigation">
+      <div className="container flex flex-wrap items-center justify-between p-4 mx-auto">
+      
         <div className="text-2xl font-bold">
           <NavLink
             to="/"
-            className="hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white rounded"
+            className="rounded hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
           >
             UniversitySys
           </NavLink>
         </div>
 
-        {/* Hamburger Menu Button (Mobile) */}
+    
         <button
-          className="md:hidden p-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-white"
+          className="p-2 rounded-lg md:hidden hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle navigation menu"
           aria-expanded={isMenuOpen}
@@ -48,8 +48,7 @@ function Navbar() {
           </svg>
         </button>
 
-        {/* Desktop Navigation Links */}
-        <div className="hidden md:flex space-x-8 items-center">
+        <div className="items-center hidden space-x-8 md:flex">
           {navItems.map((item) => (
             <NavLink
               key={item.path}
@@ -73,9 +72,8 @@ function Navbar() {
           </NavLink>
         </div>
 
-        {/* Mobile Navigation Links */}
         <div className={`w-full md:hidden mt-4 ${isMenuOpen ? 'block' : 'hidden'}`}>
-          <div className="flex flex-col space-y-4 text-center bg-blue-800 rounded-lg p-4">
+          <div className="flex flex-col p-4 space-y-4 text-center bg-blue-800 rounded-lg">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
@@ -90,7 +88,7 @@ function Navbar() {
             ))}
             <NavLink
               to="/login"
-              className="bg-white text-blue-700 hover:bg-gray-100 font-semibold py-2 px-4 rounded text-lg"
+              className="px-4 py-2 text-lg font-semibold text-blue-700 bg-white rounded hover:bg-gray-100"
             >
               Login
             </NavLink>

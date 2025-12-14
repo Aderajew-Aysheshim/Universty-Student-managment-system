@@ -27,7 +27,7 @@ function AppRoutes() {
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/instructor-dashboard" element={<InstructorDashboard />} />
         <Route path="/student-dashboard" element={<StudentDashboard />} />
-        {/* <Route path="/instructor" element={<StudentDashboard />} /> */}
+        <Route path="/grading" element={<InstructorGradingPage />} />
 
       </Routes>
       <Footer />
